@@ -19,7 +19,7 @@ Providers can list surplus food, while verified organizations or volunteers can 
 ## 🚀 Advanced Challenge Addressed
 * Optimize allocation and pickup using quantity, expiry, distance, urgency, vehicle/volunteer availability, and capacity.
 
-## 🛠️ Suggested / Used Technologies
+## 🛠️ Used Technologies
 * **Frontend:** React
 * **Backend:** Node.js / Express
 * **Database:** MongoDB / PostgreSQL
