@@ -1,7 +1,5 @@
 # 🥗 Food Rescue Network — Surplus Food to People Who Need It
 
-> *Built for HackDevengers 2.0*
-
 ## 📌 Problem
 Edible food is frequently discarded by restaurants, hostels, events, hotels, and households while nearby organizations may need food. The challenge is often **coordination, timing, and logistics** rather than simply awareness.
 
