@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   High-Contrast Field & Accessibility Mode (WCAG AAA/AA & Touch Targets)
+   Designed for mobile volunteers, field couriers, and low-vision accessibility
+   ========================================================================== */
+
+.accessibility-mode {
+  color-scheme: dark;
+}
+
+/* Background & container stark contrast */
+.accessibility-mode body,
+.accessibility-mode {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.accessibility-mode .bg-slate-950,
+.accessibility-mode .bg-slate-900,
+.accessibility-mode .bg-slate-900\/90,
+.accessibility-mode .bg-slate-900\/80,
+.accessibility-mode .bg-slate-900\/60,
+.accessibility-mode .bg-slate-900\/95,
+.accessibility-mode .bg-slate-950\/80,
+.accessibility-mode .bg-slate-950\/85,
+.accessibility-mode .bg-slate-950\/60,
+.accessibility-mode .bg-slate-950\/70 {
+  background-color: #080c14 !important;
+}
+
+/* High-contrast border reinforcement */
+.accessibility-mode .border-slate-800,
+.accessibility-mode .border-slate-800\/80,
+.accessibility-mode .border-slate-800\/60,
+.accessibility-mode .border-slate-700,
+.accessibility-mode .border-slate-700\/60,
+.accessibility-mode .border-slate-700\/80 {
+  border-color: #64748b !important;
+  border-width: 1.5px !important;
+}
+
+/* Elevate muted text to high-contrast WCAG AAA readable whites */
+.accessibility-mode .text-slate-400,
+.accessibility-mode .text-slate-500,
+.accessibility-mode .text-slate-300 {
+  color: #f8fafc !important;
+  font-weight: 500;
+}
+
+.accessibility-mode .text-slate-200 {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Touch-friendly target enlargement for field volunteers (>= 44px) */
+.accessibility-mode button,
+.accessibility-mode a[role="button"],
+.accessibility-mode input[type="button"],
+.accessibility-mode input[type="submit"] {
+  min-height: 44px !important;
+  touch-action: manipulation;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important; /* 14px */
+}
+
+.accessibility-mode input[type="text"],
+.accessibility-mode input[type="number"],
+.accessibility-mode input[type="time"],
+.accessibility-mode textarea,
+.accessibility-mode select {
+  min-height: 44px !important;
+  font-size: 0.9375rem !important;
+  border-width: 2px !important;
+  border-color: #64748b !important;
+  background-color: #030712 !important;
+  color: #ffffff !important;
+}
+
+.accessibility-mode input:focus,
+.accessibility-mode textarea:focus,
+.accessibility-mode select:focus {
+  border-color: #38bdf8 !important;
+  outline: 2px solid #38bdf8 !important;
+}
+
+/* Prominent Focus Indicators for Keyboard & Screen Readers */
+.accessibility-mode button:focus-visible,
+.accessibility-mode a:focus-visible,
+.accessibility-mode input:focus-visible,
+.accessibility-mode textarea:focus-visible,
+.accessibility-mode select:focus-visible {
+  outline: 3px solid #fbbf24 !important;
+  outline-offset: 3px !important;
+}
+
+/* Modals High-Contrast Elevation */
+.accessibility-mode [role="dialog"] {
+  border: 3px solid #34d399 !important;
+  background-color: #030712 !important;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.9), 0 25px 50px -12px rgba(0, 0, 0, 0.95) !important;
+}
+
+/* High-contrast status badges */
+.accessibility-mode .bg-emerald-950,
+.accessibility-mode .bg-emerald-950\/80,
+.accessibility-mode .bg-emerald-950\/60,
+.accessibility-mode .bg-emerald-950\/40 {
+  background-color: #064e3b !important;
+  border-color: #34d399 !important;
+  color: #ffffff !important;
+}
+
+.accessibility-mode .bg-sky-950,
+.accessibility-mode .bg-sky-950\/80,
+.accessibility-mode .bg-sky-950\/60 {
+  background-color: #0c4a6e !important;
+  border-color: #38bdf8 !important;
+  color: #ffffff !important;
+}
+
+.accessibility-mode .bg-amber-950,
+.accessibility-mode .bg-amber-950\/80 {
+  background-color: #78350f !important;
+  border-color: #fbbf24 !important;
+  color: #ffffff !important;
+}
+
+/* High-contrast Action Buttons */
+.accessibility-mode button#confirm-claim-button,
+.accessibility-mode button#confirm-handover-action-btn,
+.accessibility-mode button[id^="claim-route-btn-"] {
+  background: #fbbf24 !important;
+  color: #000000 !important;
+  border: 2px solid #f59e0b !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.025em !important;
+}
+
+.accessibility-mode button#open-google-maps-radar-btn {
+  background: #064e3b !important;
+  color: #ffffff !important;
+  border: 2px solid #34d399 !important;
+  font-weight: 700 !important;
+}
+
+.accessibility-mode button[id^="qr-code-btn-"] {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border: 2px solid #38bdf8 !important;
+}
+
+.accessibility-mode button[id^="open-verification-qr-btn-"] {
+  background: #059669 !important;
+  color: #ffffff !important;
+  border: 2px solid #34d399 !important;
+}

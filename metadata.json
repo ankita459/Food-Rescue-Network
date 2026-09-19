@@ -1,0 +1,6 @@
+{
+  "name": "Food Rescue Network",
+  "description": "Hyper-local surplus food coordination and live rescue radar platform connecting providers with emergency rescue nodes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

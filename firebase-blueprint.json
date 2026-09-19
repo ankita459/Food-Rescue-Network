@@ -1,0 +1,98 @@
+{
+  "entities": {
+    "SurplusListing": {
+      "title": "SurplusListing",
+      "description": "A food surplus donation listing available for community rescue",
+      "type": "object",
+      "properties": {
+        "foodItem": { "type": "string" },
+        "quantity": { "type": "string" },
+        "weightInKg": { "type": "number" },
+        "providerName": { "type": "string" },
+        "providerLocation": { "type": "string" },
+        "dietaryType": { "type": "string", "enum": ["Veg", "Vegan", "Dairy", "Bakery"] },
+        "packagingType": { "type": "string" },
+        "initialExpiryMinutes": { "type": "number" },
+        "createdAt": { "type": "number" },
+        "expiresAt": { "type": "number" },
+        "status": { "type": "string", "enum": ["available", "claimed", "completed", "expired"] },
+        "createdByUid": { "type": "string" },
+        "claimedAt": { "type": "number" },
+        "claimedBy": { "type": "string" },
+        "claimedByUid": { "type": "string" },
+        "destinationNode": { "type": "string" },
+        "claimToken": { "type": "string" },
+        "completedAt": { "type": "number" }
+      },
+      "required": ["foodItem", "quantity", "weightInKg", "providerName", "providerLocation", "dietaryType", "packagingType", "createdAt", "expiresAt", "status"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile identifying volunteers and food providers with civic gamification metrics",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "rescuesCount": { "type": "number" },
+        "broadcastsCount": { "type": "number" },
+        "totalKgRescued": { "type": "number" },
+        "mealsSaved": { "type": "number" },
+        "fastestClaimMinutes": { "type": "number" },
+        "earnedBadges": { "type": "array" },
+        "cheersCount": { "type": "number" },
+        "lastActiveAt": { "type": "number" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["uid", "displayName"]
+    },
+    "ImpactStats": {
+      "title": "ImpactStats",
+      "description": "Aggregated civic food rescue metrics",
+      "type": "object",
+      "properties": {
+        "mealsSaved": { "type": "number" },
+        "co2DivertedKg": { "type": "number" },
+        "activeNodes": { "type": "number" },
+        "totalRescuesCompleted": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["mealsSaved", "co2DivertedKg", "activeNodes", "totalRescuesCompleted"]
+    },
+    "RescueMessage": {
+      "title": "RescueMessage",
+      "description": "Logistics and dispatch messages between volunteer drivers and surplus providers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "listingId": { "type": "string" },
+        "senderRole": { "type": "string", "enum": ["volunteer", "provider", "coordinator"] },
+        "senderName": { "type": "string" },
+        "senderUid": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "quickTag": { "type": "string" }
+      },
+      "required": ["id", "listingId", "senderRole", "senderName", "text", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/surplus_listings/{listingId}": {
+      "schema": "SurplusListing",
+      "description": "Active and completed surplus food batches on the rescue radar"
+    },
+    "/surplus_listings/{listingId}/messages/{messageId}": {
+      "schema": "RescueMessage",
+      "description": "Real-time dispatch coordination chat log for a specific rescue listing"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Registered volunteer or provider profile records"
+    },
+    "/system_stats/{statId}": {
+      "schema": "ImpactStats",
+      "description": "Global food rescue metrics counter"
+    }
+  }
+}
